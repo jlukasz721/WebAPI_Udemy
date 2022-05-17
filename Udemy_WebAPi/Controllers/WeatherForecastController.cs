@@ -11,13 +11,14 @@ namespace Udemy_WebAPi.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly IWeatherForecastServices _service;
+        private readonly IWeatherForcastService _service;
+
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForecastServices services)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForcastService service)
         {
             _logger = logger;
-            _service = services;
+            _service = service;
         }
 
         [HttpGet]
@@ -26,5 +27,6 @@ namespace Udemy_WebAPi.Controllers
             var result = _service.Get();
             return result;
         }
+
     }
 }
