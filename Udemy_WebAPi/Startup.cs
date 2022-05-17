@@ -25,7 +25,7 @@ namespace Udemy_WebAPi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddTransient<IWeatherForecastServices, WeatherForecastServices>();
             services.AddControllers();
         }
 
@@ -40,8 +40,6 @@ namespace Udemy_WebAPi
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
