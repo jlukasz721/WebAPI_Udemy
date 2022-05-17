@@ -41,8 +41,6 @@ namespace Udemy_WebAPi
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
